@@ -1,0 +1,384 @@
+/* =========================
+   GENERAL
+========================= */
+
+body{
+    background:#f8fafc;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#1e293b;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background:#111827 !important;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+
+    color:#38bdf8 !important;
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#eff6ff,#ffffff);
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.hero p{
+
+    color:#64748b;
+
+    font-size:22px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary{
+
+    background:#2563eb;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px 30px;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-dark{
+
+    border-radius:12px;
+
+    padding:14px 30px;
+
+    transition:.3s;
+
+}
+
+.btn-outline-dark:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.hero img{
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.hero img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* =========================
+   COMPANY CARD
+========================= */
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.card h4{
+
+    font-weight:bold;
+
+}
+
+.card h6{
+
+    margin-bottom:18px;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:80px;
+
+    background:#111827;
+
+}
+/* =========================
+   STATS
+========================= */
+
+.stats h2{
+    font-size:45px;
+    font-weight:700;
+}
+
+.stats p{
+    color:#64748b;
+    font-size:18px;
+}
+/* =========================
+   FEATURES
+========================= */
+
+.feature-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.feature-icon{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+}
+
+.feature-card h4{
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#64748b;
+
+}
+
+/* =========================
+   COMPANY CARD
+========================= */
+
+.company-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.company-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.company-card .card-body{
+
+    padding:30px;
+
+}
+
+.company-card h4{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.company-card h6{
+
+    font-size:18px;
+
+}
+
+.company-card p{
+
+    color:#475569;
+
+    margin-bottom:12px;
+
+}
+
+.company-card .badge{
+
+    font-size:13px;
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+}
+
+.company-card .btn{
+
+    border-radius:10px;
+
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonial-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+input,
+textarea{
+
+    border-radius:10px !important;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:0 0 10px rgba(37,99,235,.3);
+
+    border-color:#2563eb;
+
+}
+
+textarea{
+
+    resize:none;
+
+}

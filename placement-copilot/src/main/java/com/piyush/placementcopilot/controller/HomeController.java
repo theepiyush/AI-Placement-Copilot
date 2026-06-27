@@ -1,5 +1,5 @@
 package com.piyush.placementcopilot.controller;
-
+import com.piyush.placementcopilot.entity.Student;
 import com.piyush.placementcopilot.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,4 +19,6 @@ public class HomeController {
 
         return "home";
     }
+
+
 }

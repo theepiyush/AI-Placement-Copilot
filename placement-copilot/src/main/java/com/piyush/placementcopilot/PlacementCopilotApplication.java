@@ -10,4 +10,5 @@ public class PlacementCopilotApplication {
 		SpringApplication.run(PlacementCopilotApplication.class, args);
 	}
 
+
 }
