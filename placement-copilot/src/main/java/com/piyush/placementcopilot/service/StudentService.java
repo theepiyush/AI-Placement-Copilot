@@ -38,4 +38,19 @@ public class StudentService {
 
         return null;
     }
+
+    // Get Student By Email
+    public Student getStudentByEmail(String email) {
+
+        return studentRepository.findByEmail(email);
+
+    }
+
+    // Update Profile
+    public Student updateStudent(Student student) {
+
+        return studentRepository.save(student);
+
+    }
+
 }

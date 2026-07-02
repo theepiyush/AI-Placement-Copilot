@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/dashboard2.css}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Navbar -->
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+        <div class="content">
+
+            <h2 class="page-title">Dashboard</h2>
+
+            <!-- ==================== STATS ==================== -->
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <p>Total Companies</p>
+                    <h2>52</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Applied Jobs</p>
+                    <h2>18</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Eligible Jobs</p>
+                    <h2>24</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Upcoming Drives</p>
+                    <h2>5</h2>
+                </div>
+
+            </div>
+
+            <!-- ==================== SECOND ROW ==================== -->
+
+            <div class="dashboard-row">
+
+                <!-- Placement Probability -->
+
+                <div class="dashboard-card">
+
+                    <h5>Placement Probability</h5>
+
+                    <div class="circle-progress">
+
+                        <div class="circle">
+                            82%
+                        </div>
+
+                    </div>
+
+                    <h4 class="text-success mt-3">
+                        High Chance
+                    </h4>
+
+                    <p class="text-muted">
+                        Great! You have high chances of getting placed.
+                    </p>
+
+                    <button class="btn btn-primary w-100">
+                        Improve More
+                    </button>
+
+                </div>
+
+                <!-- Recent Applications -->
+
+                <div class="dashboard-card">
+
+                    <h5>Recent Applications</h5>
+
+                    <table class="table table-borderless">
+
+                        <tr>
+                            <td>TCS</td>
+                            <td class="text-success">Applied</td>
+                        </tr>
+
+                        <tr>
+                            <td>Infosys</td>
+                            <td class="text-primary">Shortlisted</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wipro</td>
+                            <td class="text-success">Applied</td>
+                        </tr>
+
+                        <tr>
+                            <td>Deloitte</td>
+                            <td class="text-warning">In Progress</td>
+                        </tr>
+
+                    </table>
+
+                    <button class="btn btn-primary w-100">
+                        View All
+                    </button>
+
+                </div>
+
+                <!-- Top Skills -->
+
+                <div class="dashboard-card">
+
+                    <h5>Top Skills</h5>
+
+                    <p>Java</p>
+
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-primary"
+                             style="width:90%">
+                        </div>
+                    </div>
+
+                    <p>Spring Boot</p>
+
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success"
+                             style="width:85%">
+                        </div>
+                    </div>
+
+                    <p>SQL</p>
+
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-warning"
+                             style="width:80%">
+                        </div>
+                    </div>
+
+                    <p>Data Structures</p>
+
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-info"
+                             style="width:75%">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+                        View Full Report
+                    </button>
+
+                </div>
+                <!-- Resume Analyzer -->
+
+                <div class="dashboard-card">
+
+                    <h5>Resume Analyzer</h5>
+
+                    <div class="text-center mt-3">
+
+                        <h1 style="color:#5b3df5;font-size:55px;">
+                            78%
+                        </h1>
+
+                        <p class="text-muted">
+                            Resume Score
+                        </p>
+
+                    </div>
+
+                    <div class="mt-4">
+
+                        <p class="text-success">
+                            ✔ ATS Friendly
+                        </p>
+
+                        <p class="text-success">
+                            ✔ Projects Added
+                        </p>
+
+                        <p class="text-warning">
+                            ⚠ Add Internship
+                        </p>
+
+                        <p class="text-danger">
+                            ✘ Add Certifications
+                        </p>
+
+                    </div>
+
+                    <a href="/resume-analyzer"
+                       class="btn btn-primary w-100 mt-3">
+
+                        Analyze Resume
+
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

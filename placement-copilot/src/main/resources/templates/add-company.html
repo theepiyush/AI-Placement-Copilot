@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add Company</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/dashboard2.css}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+    <div class="main-content">
+
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+        <div class="content">
+
+            <h2 class="page-title">Add Company</h2>
+
+            <div class="dashboard-card">
+
+                <form th:action="@{/companies/save}"
+                      th:object="${company}"
+                      method="post">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Company Name</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{companyName}"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Role</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{role}"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Package (LPA)</label>
+
+                            <input type="number"
+                                   step="0.1"
+                                   class="form-control"
+                                   th:field="*{packageOffered}"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Location</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{location}"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Minimum CGPA</label>
+
+                            <input type="number"
+                                   step="0.1"
+                                   class="form-control"
+                                   th:field="*{minimumCgpa}"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Job Type</label>
+
+                            <select class="form-select"
+                                    th:field="*{jobType}">
+
+                                <option value="Full Time">Full Time</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="Remote">Remote</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+
+                            <label>Required Skills</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{requiredSkills}">
+
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+
+                            <label>Description</label>
+
+                            <textarea class="form-control"
+                                      rows="5"
+                                      th:field="*{description}">
+                            </textarea>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Deadline</label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   th:field="*{deadline}">
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label>Company Logo URL</label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   th:field="*{companyLogo}">
+
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-primary">
+
+                        Save Company
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

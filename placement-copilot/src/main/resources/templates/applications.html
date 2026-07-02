@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>My Applications</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          th:href="@{/css/dashboard2.css}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Navbar -->
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+        <div class="content">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <h2 class="page-title">My Applications</h2>
+
+            </div>
+
+            <!-- Success Message -->
+
+            <div class="alert alert-success alert-dismissible fade show"
+                 th:if="${successMessage}">
+
+                <span th:text="${successMessage}"></span>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+
+            </div>
+
+            <!-- Error Message -->
+
+            <div class="alert alert-danger alert-dismissible fade show"
+                 th:if="${errorMessage}">
+
+                <span th:text="${errorMessage}"></span>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Applied Date</th>
+                        <th>Status</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr th:each="app : ${applications}">
+
+                        <td th:text="${app.company.companyName}"></td>
+
+                        <td th:text="${app.company.role}"></td>
+
+                        <td th:text="${#temporals.format(app.appliedDate,'dd-MM-yyyy HH:mm')}"></td>
+
+                        <td>
+
+                            <span class="badge bg-success"
+                                  th:text="${app.status}">
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr th:if="${#lists.isEmpty(applications)}">
+
+                        <td colspan="4"
+                            class="text-center text-muted">
+
+                            You have not applied to any company yet.
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

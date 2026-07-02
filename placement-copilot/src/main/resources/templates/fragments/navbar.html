@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<nav class="top-navbar" th:fragment="navbar">
+
+    <div class="navbar-left">
+
+        <button class="menu-btn">
+            ☰
+        </button>
+
+        <span class="brand-name">
+            Placement Copilot
+        </span>
+
+    </div>
+
+    <div class="navbar-right">
+
+        <span class="username">
+            Piyush
+        </span>
+
+        <img
+                src="https://i.pravatar.cc/40"
+                class="profile-img"
+                alt="Profile">
+
+    </div>
+
+</nav>
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div th:if="${success}">
+    <script th:inline="javascript">
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: [[${success}]],
+            confirmButtonColor: '#5b3df5'
+        });
+    </script>
+</div>
+
+<div th:if="${error}">
+    <script th:inline="javascript">
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: [[${error}]],
+            confirmButtonColor: '#d33'
+        });
+    </script>
+</div>
+
+</body>
+</html>

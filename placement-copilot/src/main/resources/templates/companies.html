@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Companies</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          th:href="@{/css/dashboard2.css}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Navbar -->
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+        <div class="content">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <h2 class="page-title">Eligible Companies</h2>
+
+                <a th:href="@{/companies/add}"
+                   class="btn btn-primary">
+                    + Add Company
+                </a>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+
+                    <tr>
+
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Package</th>
+                        <th>Location</th>
+                        <th>Min CGPA</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                        <th>Eligibility</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr th:each="company : ${companies}">
+
+                        <td th:text="${company.companyName}"></td>
+
+                        <td th:text="${company.role}"></td>
+
+                        <td>
+                            <span th:text="${company.packageOffered}"></span> LPA
+                        </td>
+
+                        <td th:text="${company.location}"></td>
+
+                        <td th:text="${company.minimumCgpa}"></td>
+
+                        <td th:text="${company.deadline}"></td>
+
+                        <td>
+
+                            <span class="badge bg-success"
+                                  th:if="${company.active}">
+                                Open
+                            </span>
+
+                            <span class="badge bg-danger"
+                                  th:unless="${company.active}">
+                                Closed
+                            </span>
+
+                        </td>
+
+                        <td>
+                            <span class="badge bg-primary">
+                                Eligible
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <a th:href="@{'/apply/' + ${company.id}}"
+                               class="btn btn-success btn-sm">
+                                Apply
+                            </a>
+
+                            <a th:if="${company.active}"
+                               th:href="@{'/companies/close/' + ${company.id}}"
+                               class="btn btn-warning btn-sm">
+                                Close
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr th:if="${#lists.isEmpty(companies)}">
+
+                        <td colspan="9"
+                            class="text-center text-muted">
+
+                            No Eligible Companies Found.
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script th:inline="javascript">
+
+    let success = [[${success}]];
+    let error = [[${error}]];
+
+    if (success != null) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: success
+        });
+    }
+
+    if (error != null) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error
+        });
+    }
+
+</script>
+</body>
+</html>
